@@ -32,11 +32,12 @@ def get_possible_words(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--not-contain', type=str, help='Letters that the word does not contain')
+    parser.add_argument('--wordlist', type=str, default='wordlist.txt', help='Path to the wordlist file', required=True)
     parser.add_argument('--does-contain', type=str, help='Letters that the word does contain')
-    parser.add_argument('--pattern', type=str, help='Known pattern of the word')
+    parser.add_argument('--not-contain', type=str, help='Letters that the word does not contain')
+    parser.add_argument('--pattern', type=str, help='Known pattern of the word. Respects * as a wild card. e.g., "RO**E" ', required=True)
     parser.add_argument('--anti-pattern', type=str, help='Letter and position pairs where the letter should not appear, e.g., e:1', nargs='*')
-    parser.add_argument('--wordlist', type=str, default='wordlist.txt', help='Path to the wordlist file')
+    
 
     args = parser.parse_args()
 
