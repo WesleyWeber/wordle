@@ -3,7 +3,12 @@ This script and english word dictionary for use in word guessing games. This scr
 
 ## How to Use
 ```
-usage: wordle.py [-h] --wordlist WORDLIST [--does-contain DOES_CONTAIN] [--not-contain NOT_CONTAIN] --pattern PATTERN [--anti-pattern [ANTI_PATTERN ...]]
+usage: wordle.py [-h]   
+        --wordlist WORDLIST             
+        [--does-contain DOES_CONTAIN]   
+        [--not-contain NOT_CONTAIN]     
+        --pattern PATTERN               
+        [--anti-pattern [ANTI_PATTERN ...]]
 
 options:
   -h, --help            show this help message and exit
@@ -12,7 +17,7 @@ options:
                         Letters that the word does contain
   --not-contain NOT_CONTAIN
                         Letters that the word does not contain
-  --pattern PATTERN     Known pattern of the word. Respects * as a wild card. e.g., "RO**E"
+  --pattern PATTERN     Known pattern of the word. Respects * as a wild card. e.g., "C*A**"
   --anti-pattern [ANTI_PATTERN ...]
                         Letter and position pairs where the letter should not appear, e.g., e:1
 ```
