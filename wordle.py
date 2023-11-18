@@ -21,6 +21,13 @@ def get_possible_words(args):
     pattern = args.pattern.replace('*', '.')
     words = [word for word in words if re.match(pattern, word)]
 
+    # Process anti-patterns
+    if args.anti_pattern:
+        for ap in args.anti_pattern:
+            letter, position = ap.split(':')
+            position = int(position) - 1  # Adjusting position to be zero-indexed
+            words = [word for word in words if len(word) > position and word[position] != letter]
+
     return words
 
 def main():
@@ -28,7 +35,9 @@ def main():
     parser.add_argument('--not-contain', type=str, help='Letters that the word does not contain')
     parser.add_argument('--does-contain', type=str, help='Letters that the word does contain')
     parser.add_argument('--pattern', type=str, help='Known pattern of the word')
+    parser.add_argument('--anti-pattern', type=str, help='Letter and position pairs where the letter should not appear, e.g., e:1', nargs='*')
     parser.add_argument('--wordlist', type=str, default='wordlist.txt', help='Path to the wordlist file')
+
     args = parser.parse_args()
 
     possible_words = get_possible_words(args)
