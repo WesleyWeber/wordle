@@ -24,7 +24,11 @@ options:
 
 ## Examples
 
-Here is an example of how the script was used to guess the word 'TARDY' in 4 guesses.
+Here is an example of guessing the word 'TAWNY' in 3 guesses:
+
+`python3 wordle.py --wordlist words_alpha.txt --not-contain 'rouech' --does-contain 'wat' --pattern '*a***' --anti-pattern 't:4' 'w:1' 't:3'`
+
+Here is an example of guessing the word 'TARDY' in 4 guesses.
 
 `python3 wordle.py --wordlist words_alpha.txt --not-contain 'wisoue' --does-contain 'art' --pattern '*****' --anti-pattern 'r:1' 't:4' '**Anti-pattern has been added.**r:2' 't:5' 'a:1' 't:3' 'r:5'`
 
