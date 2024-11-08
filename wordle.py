@@ -14,8 +14,9 @@ def get_possible_words(args):
         words = [word for word in words if letter not in word]
     
     # Filter out words that don't contain all of the required letters
-    for letter in args.does_contain:
-        words = [word for word in words if letter in word]
+    if args.does_contain is not None:
+        for letter in args.does_contain:
+            words = [word for word in words if letter in word]
 
     # Filter out words that don't match the known pattern
     pattern = args.pattern.replace('*', '.')
