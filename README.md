@@ -44,3 +44,5 @@ Here is an example of guessing the word 'PURGE' in 3 guesses:
 
 ## To Do
 * Determine how to represent likelihood of word based on usage frequency common english.
+   * Complete: 75%
+   * Current Note: Implemented a ranking library, but currently lacks ability to sort or show 'top 5'.
