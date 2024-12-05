@@ -58,7 +58,7 @@ def main():
 
     for word in possible_words:
         if args.rank:
-            print(word, zipf_frequency(word, 'en'))
+            print(zipf_frequency(word, 'en'), word)
         else:
             print(word)
 
